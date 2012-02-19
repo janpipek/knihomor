@@ -29,6 +29,10 @@ Ext.application({
               {
                 name: 'author',
                 type: 'string'
+              },
+              {
+                  name: 'language',
+                  type: 'string'
               }
            ]
         });
@@ -206,6 +210,10 @@ Ext.application({
                         typeAhead:true,
                         queryMode:'remote',
 
+                    }, {
+                        fieldLabel: 'Language'                        ,
+                        // xtype: 'combobox',
+                        name: 'language',
                     }],
                     buttons: [{
                         text: 'Reset',
@@ -259,6 +267,7 @@ Ext.application({
         var addAuthorAction = Ext.create('Ext.Action', {
             // icon   : '../shared/icons/fam/delete.gif',  // Use a URL in the icon config
             text: 'Add Author',
+            icon: 'resources/icons/user_add.png',
             disabled: !window.loggedIn,
             // disabled: true,
             handler: function(widget, event) {
@@ -268,6 +277,7 @@ Ext.application({
 
         var newBookAction = Ext.create('Ext.Action', { 
             text: 'New Book',
+            icon: 'resources/icons/book_add.png',
             disabled: !window.loggedIn,
             handler: function(widget, event) {
                 showNewBookForm();
@@ -276,6 +286,7 @@ Ext.application({
 
         var addBookAction = Ext.create('Ext.Action', {
             text: 'Add Book',
+            icon: 'resources/icons/book_add.png',
             disabled: !window.loggedIn,
             handler: function(widget, event) {
                 var rec = authorGrid.getSelectionModel().getSelection()[0];
@@ -349,6 +360,11 @@ Ext.application({
                     sortable: true,
                     dataIndex: 'author',
                     width: 150
+                },
+                {
+                    text : 'Language',
+                    sortable: true,
+                    dataIndex: 'language',
                 }
             ],   
             dockedItems: [{
@@ -375,6 +391,7 @@ Ext.application({
         var logoutAction = Ext.create('Ext.Action', {
             // icon   : '../shared/icons/fam/delete.gif',  // Use a URL in the icon config
             text: 'Log Out',
+            icon: 'resources/icons/door_out.png',
             disabled: !window.loggedIn,
             // disabled: true,
             handler: function(widget, event) {
@@ -394,6 +411,7 @@ Ext.application({
         var loginAction = Ext.create('Ext.Action', {
            text: 'Log In' ,
            disabled: window.loggedIn,
+           icon: 'resources/icons/door_in.png',
            handler: function(widget, event) {
                 showLoginForm();
            }
