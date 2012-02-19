@@ -1,0 +1,8 @@
+<?php
+	// Sample DB-connection configuration file
+	//
+	// Modify it and create your own connection file 
+	// called 'db.inc.php'
+    mysql_pconnect("some_host", "some_user", "some_password");
+    mysql_select_db("some_db");
+?>

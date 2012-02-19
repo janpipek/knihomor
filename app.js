@@ -1,5 +1,5 @@
 Ext.application({
-    name: 'HelloExt',
+    name: 'Knihomor',
     launch: function() {
         Ext.state.Manager.setProvider(Ext.create('Ext.state.CookieProvider'));
 
@@ -12,6 +12,9 @@ Ext.application({
                 {
                     name: 'author_id',
                     type: 'int'
+                },
+                {
+                    name: 'fullname', type: 'string'
                 }
             ]
         });
@@ -125,6 +128,7 @@ Ext.application({
                 url: 'php/login.php',
                 bodyPadding: 5,
                 defaultType: 'textfield',
+                defaultButton: 0,
                 items: [{
                     fieldLabel: 'Login',
 
@@ -181,6 +185,7 @@ Ext.application({
                     bodyPadding: 5,
                     url: 'php/books/create.php',
                     layout: 'anchor',
+                    defaultButton: 1,
                     items: [{
                         fieldLabel: 'Title',
                         name: 'title',
@@ -190,11 +195,11 @@ Ext.application({
                         xtype: 'combobox',
                         queryMode: 'local',
                         store: authorStore,
-                        displayField: 'surname',
+                        displayField: 'fullname',
                         valueField: 'author_id',
                         forceSelection: true,
                         name: 'author',
-                        allowBlank: false,
+                        allowBlank: true,
                         minChars: 2,
                         value: index,
                         readOnly: !!index,
@@ -222,6 +227,7 @@ Ext.application({
                                        newBookWindow.close();
                                     },
                                     failure: function(form, action) {
+                                        // if (!action.result.msg) action.result.msg = "Unspecified server error";
                                         Ext.Msg.alert('Failed', action.result.msg);
                                     }
                                 });
@@ -385,6 +391,14 @@ Ext.application({
             }
         });
 
+        var loginAction = Ext.create('Ext.Action', {
+           text: 'Log In' ,
+           disabled: window.loggedIn,
+           handler: function(widget, event) {
+                showLoginForm();
+           }
+        });
+
 
         var userLabel = Ext.create('Ext.toolbar.TextItem', {
             text: "Not logged in."
@@ -395,7 +409,8 @@ Ext.application({
             items: [
                 "User:",
                 userLabel,
-                logoutAction
+                logoutAction,
+                loginAction
             ]
         })   
 
@@ -419,6 +434,7 @@ Ext.application({
         function onLogin() {
             window.loggedIn = true;
             logoutAction.enable();
+            loginAction.disable();
             addAuthorAction.enable();
             newBookAction.enable();
             addBookAction.enable();
@@ -426,6 +442,7 @@ Ext.application({
 
         function onLogout() {
             window.loggedIn = false;
+            loginAction.enable();
             logoutAction.disable();
             addAuthorAction.disable();
             newBookAction.disable();

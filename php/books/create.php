@@ -5,9 +5,15 @@ require("../lib.inc.php");
 
 require_login();
 
-
 $title = mysql_real_escape_string($_REQUEST["title"]);
-$author_id = intval($_REQUEST["author"]);
+if ( isset($_REQUEST["author"]) )
+{
+	$author_id = intval($_REQUEST["author"]);	
+}
+else
+{
+	$author_id = null;
+}
 
 $sql = "INSERT INTO `books` SET `title`='" . $title . "', `author_id` = '" . $author_id . "'";
 
@@ -21,6 +27,7 @@ if ( mysql_query($sql) )
 else
 {
 	$response["success"] = false;
+	$response["msg"] = "Could not add book";
 }
 
 echo json_encode($response);

@@ -6,7 +6,7 @@ if (isset($_REQUEST["query"])) {
 	$query = mysql_real_escape_string($_REQUEST["query"]);
 }
 
-$sql = "SELECT authors.*, COUNT(books.book_id) as 'books' FROM authors LEFT JOIN books ON books.author_id = authors.author_id "; 
+$sql = "SELECT authors.*, CONCAT(authors.surname, ', ', authors.firstname) AS fullname, COUNT(books.book_id) AS 'books' FROM authors LEFT JOIN books ON books.author_id = authors.author_id "; 
 if (isset($query)) {
 	$sql .= " WHERE authors.surname LIKE '" . $query . "%'";
 }

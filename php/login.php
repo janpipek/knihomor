@@ -1,6 +1,6 @@
 <?php
 
-$login = $_REQUEST["login"];
+$login = mysql_real_escape_string($_REQUEST["login"]);
 $password = $_REQUEST["password"];
 $md5_password = md5($password);
 
