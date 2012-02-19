@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Knihovna</title>
+        <title>Knihomor</title>
         <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
         <script src="extjs/ext-all.js"></script>
         <script src="app.js"></script>
