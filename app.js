@@ -211,7 +211,7 @@ Ext.application({
                         queryMode:'remote',
 
                     }, {
-                        fieldLabel: 'Language'                        ,
+                        fieldLabel: 'Language' ,
                         // xtype: 'combobox',
                         name: 'language',
                     }],
@@ -259,7 +259,8 @@ Ext.application({
             if (index) {
                 newBookForm.getForm().setValues({"title": "", "author": index });
             } else {
-                newBookForm.getForm().reset();
+                newBookForm.getForm().setValues({"title": "", "author": null });
+                // newBookForm.getForm().reset();
             }
             newBookWindow.show();
         }
