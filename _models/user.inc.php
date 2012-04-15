@@ -2,6 +2,19 @@
 
 class User
 {
+  // Reads all users from the database
+  public static function all()
+  {
+    $sql = "SELECT * FROM users";
+    $result = mysql_query($sql);
+    $users = array();
+    while($user = mysql_fetch_object($result, "User"))
+    {
+      $users[] = $user;
+    }
+    return $users;
+  }
+
   public static function create_password_salt_and_hash( $password )
   {
     $salt = uniqid();
@@ -16,7 +29,7 @@ class User
 
   public static function check_password_validity( $password, $salt, $hash )
   {
-    return ( User::hash_password_and_salt( $password, $salt ) == $hash );
+    return ( User::hash_password_and_salt( $password, $salt ) === $hash );
   }
 
   public static function authenticate( $login, $password )
@@ -45,3 +58,6 @@ class User
     }
   }
 }
+
+/// SQL:
+
