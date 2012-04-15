@@ -1,2 +1,3 @@
-php/db.inc.php
+_db.inc.php
 extjs/
+*~

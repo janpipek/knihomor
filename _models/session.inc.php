@@ -1,8 +1,5 @@
 <?php 
 
-require_once "../db.inc.php";
-require_once "user.inc.php";
-
 session_start();
 
 class Session
@@ -19,12 +16,19 @@ class Session
     {
       $_SESSION["user"] = null;
       return false;
-    }
+    } 
   }
 
-  public static function currentUser()
+  public static function current_user()
   {
-    return $_SESSION["user"];
+    if (array_key_exists("user", $_SESSION))
+    {
+      return $_SESSION["user"];
+    }
+    else
+    {
+      return null;
+    }
   }
 
   public static function destroy()

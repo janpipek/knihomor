@@ -1,6 +1,6 @@
 <?php
 
-require "db.inc.php";
+require_once "../db.inc.php";
 
 $login = mysql_real_escape_string($_REQUEST["login"]);
 $password = $_REQUEST["password"]; // No need to escape, it's MD5ed
