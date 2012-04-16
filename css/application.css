@@ -57,6 +57,18 @@ body {
   background-color: #000000;
   border: 1px solid black;
 }
+.message {
+  position: relative;
+  margin-left: 220px;
+  top: 70px;
+  background-color: yellow;
+  border: 1px solid #004400;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px;
+  margin-bottom: 75px;
+}
 #main {
   margin-top: 70px;
   margin-left: 220px;

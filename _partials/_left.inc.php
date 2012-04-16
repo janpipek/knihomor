@@ -3,6 +3,7 @@
     <ul id="main-menu">
       <li><a href="books">Knihy</a></li>
       <li><a href="people">Lidé</a></li>
+      <li><a href="logout.php">Odhlásit</a></li>
     </ul>
   <?php } else { ?>
     <ul id="main-menu">

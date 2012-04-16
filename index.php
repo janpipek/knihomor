@@ -13,6 +13,10 @@ include "_lib.inc.php";
     <?php require_once "_partials/_header.inc.php"; ?>
     <?php require_once "_partials/_left.inc.php"; ?>
 
+    <div class="message">
+      Hovno
+    </div>
+
     <div id="main">
       <h2>Vítejte na stránkách Knihomoru!</h2>
 

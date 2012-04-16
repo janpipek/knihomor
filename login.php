@@ -14,14 +14,9 @@ else
 {
   if (Session::create($login, $password))
   {
-    exit(0);
-    // TODO: Authentication OK
-    // Redirect to index(?)
   }
   else
   {
-    // TODO: Authentication failed
-    // Redirect to index
   }
   Request::redirect( "index.php" );
 }
