@@ -12,6 +12,13 @@ class Request
     return ( $_SERVER["REQUEST_METHOD"] === "POST" );
   }
 
+  public static function redirect( $url )
+  {
+    header( "Location: " . $url );
+  }
+
+  // TODO: Implement isAjax()
+
   public static function validate_captcha()
   {
     if (!array_key_exists("captcha", $_REQUEST))

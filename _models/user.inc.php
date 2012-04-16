@@ -15,6 +15,18 @@ class User
     return $users;
   }
 
+  // Check if the password is strong enough according to the site policy
+  public static function accept_password( $password )
+  {
+    return (strlen( $password ) > 5);
+  }
+
+  // Check if a certain login is not taken already
+  public static function login_available( $login )
+  {
+    // TODO: Implement
+  }
+
   public static function create_password_salt_and_hash( $password )
   {
     $salt = uniqid();
@@ -24,7 +36,7 @@ class User
 
   private static function hash_password_and_salt( $password, $salt )
   {
-    return md5( $salt . $password );
+    return sha1( $salt . $password );
   }
 
   public static function check_password_validity( $password, $salt, $hash )

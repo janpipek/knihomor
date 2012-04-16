@@ -16,7 +16,7 @@ class Session
     {
       $_SESSION["user"] = null;
       return false;
-    } 
+    }
   }
 
   public static function current_user()

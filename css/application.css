@@ -1,0 +1,72 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  background-color: #006600;
+}
+#header {
+  position: fixed;
+  padding: 10px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: green;
+  color: white;
+  font-family: Verdana;
+  border-bottom: 2px solid #004400;
+}
+#header h1 {
+  margin: 0px;
+  display: inline-block;
+}
+#header form {
+  display: block;
+  float: right;
+  padding: 15px 10px 0px 0px;
+}
+#header form label {
+  position: absolute;
+  top: 5px;
+  font-size: 80%;
+}
+#left {
+  position: absolute;
+  top: 55px;
+  width: 200px;
+  padding-left: 0px;
+}
+#main-menu { padding: 0px; }
+#main-menu li {
+  list-style-type: none;
+  margin: 5px 0px;
+}
+#main-menu li a {
+  padding: 5px;
+  background-color: #003000;
+  -moz-border-radius: 0px 5px 5px 0;
+  -webkit-border-radius: 0px 5px 5px 0;
+  border-radius: 0px 5px 5px 0;
+  color: white;
+  width: 100%;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid black;
+}
+#main-menu li a:hover {
+  background-color: #000000;
+  border: 1px solid black;
+}
+#main {
+  margin-top: 70px;
+  margin-left: 220px;
+  width: auto;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 0px 0px 5px;
+  padding: 10px;
+  background-color: #eeeeee;
+  border: 1px solid #004400;
+}
+#main h2 { margin: 0px 0px 10px 0px; }
+input { border: 1px solid #004400; }
