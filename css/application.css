@@ -57,7 +57,7 @@ body {
   background-color: #000000;
   border: 1px solid black;
 }
-.message {
+#messages {
   position: relative;
   margin-left: 220px;
   top: 70px;

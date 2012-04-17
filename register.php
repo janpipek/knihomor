@@ -5,31 +5,16 @@ include "_lib.inc.php";
 if (Request::isGet()) 
 {
   ?>
-  <html>
-    <head>
-      <meta charset="utf-8"/>
-      <link rel="stylesheet" href="css/application.css"/>
-    </head>
+  <h2>Registrace nového uživatele</h2>
+  <form method="post">
+    <input type="text" name="login" id="login"/><label for="login">Uživatelské jméno</label><br/>
+    <input type="password" name="password"/><label for="password">Heslo</label><br/>
+    <input type="password" name="password_confirm"/><label for="password_confirm">Heslo ještě jednou</label><br/>
+    <input type="email" name="email"/><label for="email">E-mailová adresa</label><br/>
 
-    <body>
-      <?php require_once "_partials/_header.inc.php"; ?>
-      <?php require_once "_partials/_left.inc.php"; ?>
-
-      <div id="main">
-        <h2>Registrace nového uživatele</h2>
-        <form method="post">
-          <input type="text" name="login" id="login"/><label for="login">Uživatelské jméno</label><br/>
-          <input type="password" name="password"/><label for="password">Heslo</label><br/>
-          <input type="password" name="password_confirm"/><label for="password_confirm">Heslo ještě jednou</label><br/>
-          <input type="email" name="email"/><label for="email">E-mailová adresa</label><br/>
-
-          <?php echo captcha(); ?><br/>
-          <input type="submit" value="Pošli"/>
-        </form>
-      </div>
-    </body>
-  </html>
-
+    <?php echo captcha(); ?><br/>
+    <input type="submit" value="Pošli"/>
+  </form>
   <?php
 }
 else

@@ -14,9 +14,11 @@ else
 {
   if (Session::create($login, $password))
   {
+    Session::post_message("Uživatel úspěšně přihlášen.");
   }
   else
   {
+    Session::post_message("Neplatné uživatelské jméno nebo heslo.");
   }
   Request::redirect( "index.php" );
 }

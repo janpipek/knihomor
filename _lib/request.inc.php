@@ -15,6 +15,7 @@ class Request
   public static function redirect( $url )
   {
     header( "Location: " . $url );
+    exit(0);
   }
 
   // TODO: Implement isAjax()

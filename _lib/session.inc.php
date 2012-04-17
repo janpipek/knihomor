@@ -42,7 +42,19 @@ class Session
             $params["secure"], $params["httponly"]
         );
     }
-    session_destroy();
+    session_destroy(); // Start a new one
+    session_start();
     return true;
+  }
+
+  public static function pop_messages()
+  {
+    $messages = $_SESSION["messages"];
+    $_SESSION["messages"] = array();
+  }
+
+  public static function post_message( $message )
+  {
+    $_SESSION["messages"][] = $message;
   }
 }

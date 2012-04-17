@@ -31,3 +31,5 @@ foreach ( scandir( $_helpersDir ) as $file )
     require_once( $_helpersDir . "/" . $file );
   }
 }
+
+$page = new Page();
