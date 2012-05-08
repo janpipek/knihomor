@@ -6,10 +6,9 @@ require_once "_db.inc.php";
 date_default_timezone_set("Europe/Prague");
 
 /** AUTO-LOADING MECHANISM **/
-$_autoloadLocations = array( "_models/", "_lib/");
 function _autoLoad($className)
 {
-  global $_autoloadLocations;
+  $_autoloadLocations = array( "_models/", "_lib/");
 
   foreach ($_autoloadLocations as $location) {
     $fileName = dirname(__FILE__) . "/" . $location . strtolower($className) . ".inc.php";
