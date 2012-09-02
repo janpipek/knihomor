@@ -69,6 +69,18 @@ class User
       return false;
     }
   }
+
+  // Save to DB
+  public function create()
+  {
+    $sql = "INSERT INTO users (login, password_salt, password_hash, email, nickname) VALUES (";
+    $sql .= "'". mysql_real_escape_string($this->login) "', ";
+    $sql .= "'". mysql_real_escape_string($this->password_salt) "', ";
+    $sql .= "'". mysql_real_escape_string($this->password_hash) "', ";
+    $sql .= "'". mysql_real_escape_string($this->email) "', ";
+    $sql .= "'". mysql_real_escape_string($this->nickname) "') ";
+    echo $sql;
+  }
 }
 
 /// SQL:

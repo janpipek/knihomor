@@ -2,7 +2,7 @@
 
 include "_lib.inc.php";
 
-if (Request::isGet()) 
+if (Request::isGet())
 {
   ?>
   <h2>Registrace nového uživatele</h2>
@@ -17,7 +17,7 @@ if (Request::isGet())
   </form>
   <?php
 }
-else
+else if (Request::isPost())
 {
 
 }

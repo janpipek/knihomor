@@ -20,6 +20,11 @@ class Request
 
   // TODO: Implement isAjax()
 
+  /*
+   * Validate captcha input (should be equal to year + 1)
+   * 
+   * Complementary function you will find in _helpers/forms
+   */
   public static function validate_captcha()
   {
     if (!array_key_exists("captcha", $_REQUEST))
